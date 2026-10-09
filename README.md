@@ -1,58 +1,80 @@
-# ShopEase — Online Shopping Platform
+# Online Shopping Platform
 
-A quick full-stack demo for a Low-Level Design / REST API practical.
+An online shopping web application developed using HTML, CSS, JavaScript, Node.js, and Express.js. The application allows users to search products, view product details, add items to a shopping cart, place orders, and track deliveries.
 
-## Requirements
-- Node.js (18+ recommended)
-- VS Code
+## Features
 
-## Run in VS Code
-1. Extract the ZIP file.
-2. Open the `online-shopping-platform` folder in VS Code.
-3. Open **Terminal → New Terminal**.
-4. Run `npm install`
-5. Run `npm start`
-6. Open `http://localhost:3000` in your browser.
+* Search products by name or category
+* View product details and prices
+* Add products to the shopping cart
+* Calculate cart total
+* Place orders
+* Track order delivery status
+* REST API integration
+* Responsive user interface
 
-Keep the terminal running while using the website.
+## Technologies Used
 
-## REST APIs
-| Method | Endpoint | Purpose |
-|---|---|---|
-| GET | `/api/health` | Check API status |
-| GET | `/api/products?search=phone` | Search products |
-| GET | `/api/products/1` | View product details |
-| POST | `/api/cart` | Add to cart |
-| GET | `/api/cart?userId=101` | View cart |
-| POST | `/api/orders` | Place order |
-| GET | `/api/orders/1001/track` | Track delivery |
-| PATCH | `/api/orders/1001/track` | Advance demo delivery status |
+* HTML
+* CSS
+* JavaScript
+* Node.js
+* Express.js
+* REST APIs
+* JSON
 
-### Postman examples
+## Project Structure
 
-**Add to cart**
-- Method: `POST`
-- URL: `http://localhost:3000/api/cart`
-- Body → raw → JSON:
-```json
-{ "userId": 101, "productId": 1, "quantity": 2 }
+```text
+online-shopping-platform/
+├── public/
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
+├── server.js
+├── package.json
+└── README.md
 ```
 
-**Place order**
-- Method: `POST`
-- URL: `http://localhost:3000/api/orders`
-- Body → raw → JSON:
-```json
-{ "userId": 101 }
-```
+## REST API Endpoints
 
-**Track order**
-- Method: `GET`
-- URL: `http://localhost:3000/api/orders/1001/track`
+| Method | Endpoint                     | Description               |
+| ------ | ---------------------------- | ------------------------- |
+| GET    | `/api/products`              | Retrieve all products     |
+| GET    | `/api/products?search=phone` | Search products           |
+| GET    | `/api/products/1`            | View product details      |
+| POST   | `/api/cart`                  | Add a product to the cart |
+| GET    | `/api/cart?userId=101`       | View cart                 |
+| POST   | `/api/orders`                | Place an order            |
+| GET    | `/api/orders/1001/track`     | Track an order            |
 
-The order ID is returned by the place-order response; use that actual ID when tracking.
+## How It Works
 
-## Notes
-- Product/cart/order data is stored in memory for demo purposes and resets when the server restarts.
-- Checkout is simulated; no real payment provider is connected.
-- Delivery status can be advanced using the demo PATCH endpoint.
+1. Users browse or search for products.
+2. They view product details and add items to the cart.
+3. The application calculates the total price.
+4. Users place orders through the backend API.
+5. Users can track their orders using the order ID.
+
+## Limitations
+
+* Application data is stored in memory and resets when the server restarts.
+* Payment processing is simulated and does not use a real payment gateway.
+* Delivery tracking is simulated for demonstration purposes.
+
+## Future Enhancements
+
+* User authentication and registration
+* Database integration
+* Real payment gateway integration
+* Product reviews and ratings
+* Admin dashboard
+* Email notifications
+
+## Author
+
+Kamalika P
+
+## License
+
+This project is developed for educational purposes.
