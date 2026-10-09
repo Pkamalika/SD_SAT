@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEase | Online Shopping</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">S</span> ShopEase</a>
+    <div class="search-wrap">
+      <span>⌕</span>
+      <input id="search" type="search" placeholder="Search products..." />
+    </div>
+    <button class="cart-pill" id="cartButton">🛒 Cart <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR EVERYDAY MARKETPLACE</p>
+        <h1>Find something<br /><span>you'll love.</span></h1>
+        <p class="hero-copy">Good products. Great prices. Simple shopping.</p>
+        <a class="hero-cta" href="#products">Explore products <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="shopping-bag">🛍️</div>
+        <div class="float-card">✦ Best deals<br /><strong>Every day</strong></div>
+      </div>
+    </section>
+
+    <section class="section-heading" id="products">
+      <div><p class="eyebrow">HANDPICKED FOR YOU</p><h2>Popular products</h2></div>
+      <span id="resultCount" class="result-count"></span>
+    </section>
+    <section id="productGrid" class="product-grid"></section>
+
+    <section class="bottom-grid">
+      <div class="panel cart-panel" id="cartPanel">
+        <div class="panel-heading"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your cart</h2></div><span class="panel-icon">🛒</span></div>
+        <div id="cartItems" class="cart-items"><p class="muted">Your cart is empty. Add a product to get started.</p></div>
+        <div class="cart-total"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+        <button id="checkoutButton" class="primary-button full-width">Place order <span>→</span></button>
+        <p class="tiny-note">Demo checkout · No real payment is taken</p>
+      </div>
+      <div class="panel tracking-panel">
+        <div class="panel-heading"><div><p class="eyebrow">ORDER UPDATES</p><h2>Track delivery</h2></div><span class="panel-icon">📦</span></div>
+        <p class="muted">Place an order, then enter its order ID to check delivery status.</p>
+        <form id="trackForm" class="track-form">
+          <input id="orderIdInput" type="number" placeholder="e.g. 1001" required />
+          <button class="secondary-button" type="submit">Track</button>
+        </form>
+        <div id="trackingResult" class="tracking-result">Your tracking details will appear here.</div>
+      </div>
+    </section>
+    <section class="api-note"><span class="api-dot"></span><div><strong>REST API connected</strong><p>Frontend requests are handled by the Node.js + Express backend.</p></div><button id="apiCheck" class="text-button">Check API ↗</button></section>
+  </main>
+  <footer>© 2026 ShopEase · Student project demonstration</footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

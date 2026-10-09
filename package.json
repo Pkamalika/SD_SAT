@@ -1,0 +1,8 @@
+{
+  "name": "online-shopping-platform",
+  "version": "1.0.0",
+  "description": "A quick demo e-commerce platform with frontend and REST APIs",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "express": "^4.21.2" }
+}
